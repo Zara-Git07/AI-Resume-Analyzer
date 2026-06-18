@@ -1,0 +1,90 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": []
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "code",
+      "execution_count": 2,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "A-ppi37BvcD4",
+        "outputId": "d5ee80a0-745a-4344-b3ab-ebdddd17bfe1"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Resume Analysis\n",
+            "------------------------------\n",
+            "✓ Found: Python\n",
+            "✓ Found: Cybersecurity\n",
+            "✓ Found: Network Security\n",
+            "✓ Found: AI\n",
+            "✗ Missing: Cloud\n",
+            "✗ Missing: Machine Learning\n",
+            "\n",
+            "Resume Score: 4 / 6\n",
+            "Good resume coverage.\n"
+          ]
+        }
+      ],
+      "source": [
+        "resume = \"\"\"\n",
+        "Amber Zeeshan\n",
+        "\n",
+        "Education:\n",
+        "Master's in Cybersecurity\n",
+        "\n",
+        "Skills:\n",
+        "Python, Network Security, AI Tools\n",
+        "\n",
+        "Experience:\n",
+        "Cybersecurity Intern\n",
+        "\"\"\"\n",
+        "\n",
+        "keywords = [\n",
+        "    \"Python\",\n",
+        "    \"Cybersecurity\",\n",
+        "    \"Network Security\",\n",
+        "    \"AI\",\n",
+        "    \"Cloud\",\n",
+        "    \"Machine Learning\"\n",
+        "]\n",
+        "\n",
+        "score = 0\n",
+        "\n",
+        "print(\"Resume Analysis\")\n",
+        "print(\"-\" * 30)\n",
+        "\n",
+        "for keyword in keywords:\n",
+        "    if keyword.lower() in resume.lower():\n",
+        "        print(f\"✓ Found: {keyword}\")\n",
+        "        score += 1\n",
+        "    else:\n",
+        "        print(f\"✗ Missing: {keyword}\")\n",
+        "\n",
+        "print(\"\\nResume Score:\", score, \"/\", len(keywords))\n",
+        "\n",
+        "if score < 4:\n",
+        "    print(\"Suggestion: Add more technical skills.\")\n",
+        "else:\n",
+        "    print(\"Good resume coverage.\")"
+      ]
+    }
+  ]
+}
